@@ -1,51 +1,59 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <title>Traveling Salesman Problem</title>
   <meta name="description" content="TSP">
-
   <script src="js/manager.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-</head>
-<style>
- 
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  
 
-  body {
-    font-family: 'Merriweather', serif;
-    margin: 20px;
-    background: url(' c:\Users\HP\Downloads\travellingsalesman.jpg') center center fixed;
-    background-size: cover;
-    text-align: center;
-    background-color: #095869;
-  }
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      margin: 20px;
+      background-size: cover;
+      text-align: center;
+      background-color: #095869;
+    }
+  
+    h1 {
+      color: white; /* Set the text color to white */
+    }
+  
+    canvas {
+      border-style: solid;
+      border-width: 2px;
+      border-color: #010101;
+      background-color: #efefef;
+    }
+  
+    button {
+      background: #78f6d2;
+      background: -webkit-linear-gradient(#cad2d0, #00ff78);
+      background: linear-gradient(#78f6d2, #00ff78);
+      border-radius: 5px;
+      padding: 8px 20px;
+      color: #434141;
+      display: inline-block;
+      font: normal 700 24px/1 "Calibri", sans-serif;
+      text-align: center;
+      text-shadow: 1px 1px #000000;
+    }
+  
+    p {
+      font-size: 25px;
+    }
+  
+    #gen,
+    #path,
+    #distance {
+      color: white;
+    }
+  </style>
+  
 
-  canvas {
-    border-style: solid;
-    border-width: 2px;
-    border-color: #010101;
-    background-color: #efefef;
-  }
 
-  button {
-    background: #78f6d2;
-    background: -webkit-linear-gradient(#78f6d2, #00ff78);
-    background: linear-gradient(#78f6d2, #00ff78);
-    border-radius: 5px;
-    padding: 8px 20px;
-    color: #ffffff;
-    display: inline-block;
-    font: normal 700 24px/1 "Calibri", sans-serif;
-    text-align: center;
-    text-shadow: 1px 1px #000000;
-  }
-
-  p {
-    font-size: 25px;
-  }
-</style>
 <body onload = "initialize()">
   <h1>SOLVING TRAVELING SALESMAN PROBLEM USING A GENETIC ALGORITHM</h1>
   <canvas id = "canvas" height = "500" width = "500"></canvas>
@@ -255,9 +263,9 @@ function getBestRoute() {
 }
 
 function clone(array) { //returns a cloned 1D array
-	var newArray = []; //clone
+  var newArray = []; //clone
   for(i = 0; i < array.length; i++) {
-  	newArray[i] = array[i];
+    newArray[i] = array[i];
   }
   return newArray;
 }
@@ -410,7 +418,7 @@ TSP.prototype.CalculatePopulationFitness = function() {
       this.shortestRoute = tourLength;
       this.fittestGenome = i;
       this.fittestPath = this.population[i].cities;
-	    this.distance = tourLength;
+      this.distance = tourLength;
     }
 
     if(tourLength > this.longestRoute) {
@@ -513,7 +521,7 @@ TSP.prototype.Reset = function() {
   this.fittestGenome = 0;
   this.totalFitness = 0;
   this.fittestPath = [];
-	this.distance = 0;
+  this.distance = 0;
 }
 
 TSP.prototype.CreateStartingPopulation = function() {
